@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Forums</title>
+        <link rel="shortcut icon" type="image/x-icon" href="./assets/images/favicon.ico">
+        <link rel="stylesheet" href="./assets/css/normalize.css">
+        <link rel="stylesheet" href="./assets/css/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="./assets/css/font.css">
+        <link rel="stylesheet" href="./assets/css/header.css">
+        <link rel="stylesheet" href="./assets/css/navbar.css">
+        <link rel="stylesheet" href="./assets/css/semiFooter.css">
+        <link rel="stylesheet" href="./assets/css/footer.css">
+        <link rel="stylesheet" href="./assets/css/forums.css">
+        <script src="./assets/js/bootstrap/bootstrap.min.js"></script>
+        <script src="./assets/js/jquery/jquery-3.6.4.min.js"></script>
+        <script src="./assets/js/navbar.js"></script>
+        <script src="./assets/js/forums.js"></script>
+    </head>
+    <body>
+        <!-- Header -->
+        <header class="container-fluid sticky-top">
+            <div class="container d-flex justify-content-between">
+                <div class="text-white py-3 d-flex align-items-center gap-3">
+                    <img class="websiteLogo" src="./assets/images/oc_logo.png" alt="OC Logo">
+                    <section class="text-center">
+                        <h3 class="m-0">OSMEÑA COLLEGES</h3>
+                        <p class="m-0">Aspire...Achieve...Advance!</p>
+                    </section>
+                </div>
+                <div class="headerSearchDirectory mb-3">
+                    <div class="headerSearchDirectoryInner pt-3 px-3 flex-grow text-center">
+                        <p>Search the Directory</p>
+                    </div>
+                </div>
+                <div class="d-flex pb-3 flex-column justify-content-between">
+                    <div class="align-self-start d-flex justify-content-between gap-3">
+                        <div class="visitor">
+                            <div class="visitorInner px-5">Visitor</div>
+                        </div>
+                        <div class="alumna">
+                            <div class="alumnaInner px-5">Alumna</div>
+                        </div>
+                    </div>
+                    <form class="d-flex align-self-end">
+                        <input class="headerSearchBar form-control me-2" type="search" placeholder="Search by title, skill or company" aria-label="Search">
+                        <i class="headerSearchIcon fa-solid fa-magnifying-glass"></i>
+                    </form>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-xl navbar-light bg-transparent container-fluid py-4">
+            <div class="container">
+                <form class="d-flex d-lg-none">
+                    <input class="searchBar form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="searchButton btn btn-outline-success" type="submit">Search</button>
+                </form>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarBasic" aria-controls="navbarBasic" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarBasic">
+                    <ul class="navbar-nav mx-auto mb-2 mb-xl-0 ">
+                        <li class="nav-item">
+                            <a class="nav-link px-3" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="/my_network">My Network</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="/job_opportunities">Job Opportunities</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="/forums">Forums</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="#">News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="#">Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="/about">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="#">Schools</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="#">Contact</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="../AlumniManagementSystem/profile_page.php">
+                                <img class="userProfilePicture" src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="User Profile Picture">
+                                Me
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>        
+
+        <!-- Main Content -->
+        <div class="container">
+            <div class="container-fluid px-0 d-flex gap-3">
+                <!-- Alumni Forum Section -->
+                <div class="alumniForumsSection p-2">
+                    <div class="alumniForumsContent text-justify text-white p-3">
+                        <h6 class="text-white text-center">ALMUNI FORUMS</h6>
+                        <p>
+                            The interactive forum links post, present and future Education for Sustainable Development Teacher Educators together to share practice, ideas and experiences of Education for Sustainable Development. It will link new participants to alumni of the Education for Sustainable Development programmes that have been run in the SADC Region, and will create a platform for sharing Education for Sustainable Development experience in the SADC Region.
+                        </p>
+                        <p>
+                            We encourage Teacher Educators interested in Education for Sustainable Development to sign up to the Interactive Alumni Forum below.
+                        </p>
+                        <p>
+                            Once you have joined the databse, we will keep you informed of seminars, event and webinars that you can link.
+                        </p>
+                        <p>
+                            We will also keep records of forum activities on this platform, so visit it regularly for updates.
+                        </p>
+                        <p class="border-2 border-top small text-center pt-3">
+                            Register to join the interactive alumni forum
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Alumni Posting Section -->
+                <div class="alumniPostingSection d-flex flex-column p-3">
+                    <div class="userPostingSection mb-3 d-flex flex-column">
+                        <section class="d-flex gap-3 align-items-start mb-1">
+                            <img class="profilePicture" src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="User Profile Pic">
+                            <form class="flex-grow-1">
+                                <div class="form-group">
+                                    <textarea class="form-control p-3 startAPost" rows="1" placeholder="Start a post"></textarea>
+                                </div>
+                            </form>
+                        </section>
+                        <section class="d-flex justify-content-between ps-5 ms-5 pe-3">
+                            <span class="postUtilities"><i class="fa-regular fa-image postUtilitiesIcons"></i> Photo</span>
+                            <span class="postUtilities"><i class="fa-solid fa-video postUtilitiesIcons"></i></i> Video</span>
+                            <span class="postUtilities"><i class="fa-solid fa-calendar-days postUtilitiesIcons"></i> Event</span>
+                            <span class="postUtilities"><i class="fa-solid fa-file-pen postUtilitiesIcons"></i> Write Article</span>
+                        </section>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="divider d-flex gap-3 align-items-center mb-3">
+                        <section class="flex-grow-1">
+                            <hr>
+                        </section>
+                        <section class="small">
+                            <label for="sortBy">Sort by: </label>
+                            <select name="sortBy" id="sortBy">
+                                <option value="top">Top</option>
+                                <option value="newest">Newest</option>
+                                <option value="oldest">Oldest</option>
+                            </select>
+                        </section>
+                    </div>
+
+                    <!-- Posting Section -->
+                    <div class="postingSection mb-3">
+                        <div class="posting p-3">
+                            <div class="postingHeader d-flex justify-content-between align-items-center">
+                                <section class="d-flex gap-3 align-items-center">
+                                    <img class="posterPhoto" src="https://cdn-icons-png.flaticon.com/512/428/428933.png" alt="Poster Photo">
+                                    <span>
+                                        <h6 class="mb-0">Question 1</h6>
+                                        <p class="mb-0">Joshua Medina</p>
+                                    </span>
+                                </section>
+                                <section>
+                                    <p>Monday 01, March, 2023, 05:54 AM</p>
+                                </section>
+                            </div>
+                            <hr>
+                            <div class="postingBody">
+                                <p>Hi All,</p>
+                                <p>
+                                    As one of the host for week 2, I would like to open the discussion for Question 1.
+                                </p>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, consequuntur? Soluta, aperiam saepe dolor eaque laudantium accusamus? Vel, error consectetur a nulla dignissimos aut, ipsa aliquam, numquam quam ex sapiente!
+                                </p>
+                                <p class="mb-0">Thanks.</p>
+                                <p>Joshua</p>
+                            </div>
+                            <div class="postingFooter small">
+                                <button class="postingUtilities btn editButton">Edit</button> |
+                                <button class="postingUtilities btn deleteButton">Delete</button> |
+                                <button class="postingUtilities btn replyButton">Reply</button> 
+                            </div>  
+                        </div>
+                        <!-- Reply Section -->
+                        <div class="replySection my-3">
+                            <h6 class="mb-0">Leave a Comment</h6>
+                            <p class="mb-0">Your email address will not be published.</p>
+                            <form action="" method="post">
+                                <textarea class="reply p-2 rounded w-100" placeholder="Type here..." rows="2"></textarea>
+                                <button class="btn postCommentButton" type="submit">Post Comment</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="postingSection">
+                        <div class="posting p-3">
+                            <div class="postingHeader d-flex justify-content-between align-items-center">
+                                <section class="d-flex gap-3 align-items-center">
+                                    <img class="posterPhoto" src="https://cdn-icons-png.flaticon.com/512/428/428933.png" alt="Poster Photo">
+                                    <span>
+                                        <h6 class="mb-0">Question 2</h6>
+                                        <p class="mb-0">Joshua Medina</p>
+                                    </span>
+                                </section>
+                                <section>
+                                    <p>Monday 01, March, 2023, 05:54 AM</p>
+                                </section>
+                            </div>
+                            <hr>
+                            <div class="postingBody">
+                                <p>Hi All,</p>
+                                <p>
+                                    As one of the host for week 2, I would like to open the discussion for Question 2.
+                                </p>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, consequuntur? Soluta, aperiam saepe dolor eaque laudantium accusamus? Vel, error consectetur a nulla dignissimos aut, ipsa aliquam, numquam quam ex sapiente!
+                                </p>
+                                <p class="mb-0">Thanks.</p>
+                                <p>Joshua</p>
+                            </div>
+                            <div class="postingFooter small">
+                                <button class="postingUtilities btn editButton">Edit</button> |
+                                <button class="postingUtilities btn deleteButton">Delete</button> |
+                                <button class="postingUtilities btn replyButton">Reply</button> 
+                            </div>  
+                        </div>
+                        
+                        <!-- Comment Section -->
+                        <div class="commentSection ms-5 p-3 my-3">
+                            <div class="commentSectionHeader d-flex justify-content-between align-items-center border-bottom border-3 border-white pb-3">
+                                <section class="d-flex gap-3 align-items-center">
+                                    <img class="posterPhoto" src="https://cdn-icons-png.flaticon.com/512/236/236831.png" alt="Poster Photo">
+                                    <span>
+                                        <h6 class="mb-0">Re: Question 2</h6>
+                                        <p class="mb-0">by Manny Ramos</p>
+                                    </span>
+                                </section>
+                                <section>
+                                    <p>Monday 01, March, 2023, 05:54 AM</p>
+                                </section>
+                            </div>
+                            <div class="commentSectionBody pt-3">
+                                <p>Hi</p>
+                                <p>
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae aliquam dolore ipsum enim libero! Iusto, aperiam id. Illo, eum! Temporibus ex nulla doloribus voluptatem laborum culpa ipsam quibusdam facilis nemo?
+                                </p>
+                                <p class="mb-0">- Manny</p>
+                            </div>
+                        </div>
+
+                        <!-- Reply Section -->
+                        <div class="replySection my-3">
+                            <h6 class="mb-0">Leave a Comment</h6>
+                            <p class="mb-0">Your email address will not be published.</p>
+                            <form action="" method="post">
+                                <textarea class="reply p-2 rounded w-100" placeholder="Type here..." rows="2"></textarea>
+                                <button class="btn postCommentButton" type="submit">Post Comment</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination mb-0">
+                            <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">«</span>
+                            </a>
+                            </li>
+                            <li class="page-item"><a class="page-link paginationActive" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">4</a></li>
+                            <li class="page-item"><a class="page-link" href="#">5</a></li>
+                            <li class="page-item"><a class="page-link" href="#">6</a></li>
+                            <li class="page-item"><a class="page-link" href="#">7</a></li>
+                            <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">»</span>
+                            </a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="">Last</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Semi Footer -->
+        <div class="semiFooter container-fluid">
+            <div class="container d-flex gap-3 justify-content-between pt-5 pb-3">
+                <div class="alumniNews">
+                    <h6 class="semiFooterTitle">ALUMNI NEWS</h6>
+                    <ul class="semiFooterLists">
+                        <li>
+                            <a href="">News from the alumni</a>
+                        </li>
+                        <li>
+                            <a href="">News from the school</a>
+                        </li>
+                        <li>
+                            <a href="">Submit News</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="getInvolved">
+                    <h6 class="semiFooterTitle">Get Involved</h6>
+                    <ul class="semiFooterLists">
+                        <li>
+                            <a href="">Online Subscription</a>
+                        </li>
+                        <li>
+                            <a href="">Become a member</a>
+                        </li>
+                        <li>
+                            <a href="">Become a sponsor</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="peopleAndNetwork">
+                    <h6 class="semiFooterTitle">People & Network</h6>
+                    <ul class="semiFooterLists">
+                        <li>
+                            <a href="">Alumni Directory</a>
+                        </li>
+                        <li>
+                            <a href="">Clubs and Groups</a>
+                        </li>
+                        <li>
+                            <a href="">Ambassadors</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="peopleAndAboutUs">
+                    <h6 class="semiFooterTitle">People & About Us</h6>
+                    <ul class="semiFooterLists">
+                        <li>
+                            <a href="">Mission</a>
+                        </li>
+                        <li>
+                            <a href="">History</a>
+                        </li>
+                        <li>
+                            <a href="">Annual report</a>
+                        </li>
+                        <li>
+                            <a href="">Board of Directors</a>
+                        </li>
+                        <li>
+                            <a href="">Office Team</a>
+                        </li>
+                        <li>
+                            <a href="">Impact on Business & Society</a>
+                        </li>
+                        <li>
+                            <a href="">Congress</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+    <footer>
+        <div class="footer container-fluid text-white py-5">
+            <div class="container d-flex flex-column justify-content-center align-items-center">
+                <div class="footerSocialMediaSection d-flex gap-4">
+                    <a class="footerSocMed" href="www.facebook.com"><i class="fa-brands fa-square-facebook"></i></a>
+                    <a class="footerSocMed" href="www.twitter.com"><i class="fa-brands fa-square-twitter"></i></a>
+                    <a class="footerSocMed" href="wwww.instagram.com"><i class="fa-brands fa-square-instagram"></i></a>
+                    <a class="footerSocMed" href="www.youtube.com"><i class="fa-brands fa-square-youtube"></i></a>
+                </div>
+                <p class="footerAllRightsReserved text-center mb-0">
+                    &copy; 2023 All rights reserved. The Osmeña Colleges is an equal opportunity educator and employer. Privacy Statement Report Web Disability-Related Issue
+                </p>
+            </div>
+        </div>
+    </footer>
+</html>

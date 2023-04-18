@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Admin</title>
+        <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico">
+        <link rel="stylesheet" href="/assets/css/normalize.css">
+        <link rel="stylesheet" href="/assets/css/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="/assets/css/font.css">
+        <link rel="stylesheet" href="/assets/css/admin.css">
+        <script src="/assets/js/bootstrap/bootstrap.min.js"></script>
+        <script src="/assets/js/jquery/jquery-3.6.4.min.js"></script>
+        <!-- TinyMCE -->
+        <script src="https://cdn.tiny.cloud/1/lobs73pkugfmy8jovg943y9fp3a11b9bu8t7jv143pjh1uli/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+        <!-- Toast Notification -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <!-- Modals -->
+        <script src="/assets/js/manageAccountModal.js"></script>
+        <script src="/assets/js/logoutModal.js"></script>
+        <!-- Gallery -->
+        <script src="/assets/js/gallery/editGalleryModal.js"></script>
+        <script src="./assets/js/gallery/deleteGalleryModal.js"></script>
+        <!-- Course List -->
+        <script src="/assets/js/courseList/editCourseListModal.js"></script>
+        <script src="./assets/js/courseList/deleteCourseListModal.js"></script>
+        <!-- Alumni List -->
+        <script src="/assets/js/alumniList/viewAlumniModal.js"></script>
+        <script src="/assets/js/alumniList/deleteAlumniModal.js"></script>
+        <!-- Jobs -->
+        <script src="/assets/js/jobs/viewJobModal.js"></script>
+        <script src="/assets/js/jobs/editJobModal.js"></script>
+        <script src="/assets/js/jobs/deleteJobModal.js"></script>
+        <script src="/assets/js/jobs/addJobModal.js"></script>
+        <!-- Events -->
+        <script src="/assets/js/events/addEventsModal.js"></script>
+        <script src="/assets/js/events/viewEventModal.js"></script>
+        <script src="/assets/js/events/editEventModal.js"></script>
+        <script src="/assets/js/events/deleteEventModal.js"></script>
+        <!-- Forum -->
+        <script src="/assets/js/forum/addForumModal.js"></script>
+        <script src="/assets/js/forum/viewForumModal.js"></script>
+        <script src="/assets/js/forum/editForumModal.js"></script>
+        <script src="/assets/js/forum/deleteForumModal.js"></script>
+        <!-- User -->
+        <script src="/assets/js/users/addUserModal.js"></script>
+        <script src="/assets/js/users/editUserModal.js"></script>
+        <script src="/assets/js/users/deleteUserModal.js"></script>
+    </head>
+    <body>
+        <div class="navigation container-fluid px-0 sticky-top">
+            <div class="container">
+                <!-- Navigation -->
+                <nav class="navbar navbar-expand-xl navbar-dark">
+                    <div class="container-fluid navContainer">
+                        <a class="navbar-brand" href="#">Alumni Management System</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarWithDropdown" aria-controls="navbarWithDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarWithDropdown">
+                            <ul class="navbar-nav ms-auto">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Admin
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        <li>
+                                            <a class="dropdown-item manageAccount" href="#">
+                                                <i class="fa-solid fa-gear"></i>
+                                                Manage Account
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item logout" href="#">
+                                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                                Logout
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        
+        <div class="d-flex align-items-start">
+            <!-- Sidebar -->
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <a class="sidebarLink nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
+                    <i class="fa-solid fa-house"></i>
+                    Home
+                </a>
+                <a class="sidebarLink nav-link" id="v-pills-gallery-tab" data-bs-toggle="pill" href="#v-pills-gallery" role="tab" aria-controls="v-pills-gallery" aria-selected="false">
+                    <i class="fa-solid fa-image"></i> 
+                    Gallery
+                </a>
+                <a class="sidebarLink nav-link" id="v-pills-courseList-tab" data-bs-toggle="pill" href="#v-pills-courseList" role="tab" aria-controls="v-pills-courseList" aria-selected="false">
+                    <i class="fa-solid fa-list"></i>
+                    Course List
+                </a>
+                <a class="sidebarLink nav-link" id="v-pills-alumniList-tab" data-bs-toggle="pill" href="#v-pills-alumniList" role="tab" aria-controls="v-pills-alumniList" aria-selected="false">
+                    <i class="fa-solid fa-users"></i>
+                    Alumni List
+                </a>
+                <a class="sidebarLink nav-link" id="v-pills-jobs-tab" data-bs-toggle="pill" href="#v-pills-jobs" role="tab" aria-controls="v-pills-jobs" aria-selected="false">
+                    <i class="fa-solid fa-briefcase"></i>
+                    Jobs
+                </a>
+                <a class="sidebarLink nav-link" id="v-pills-events-tab" data-bs-toggle="pill" href="#v-pills-events" role="tab" aria-controls="v-pills-events" aria-selected="false">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    Events
+                </a>
+                <a class="sidebarLink nav-link" id="v-pills-forum-tab" data-bs-toggle="pill" href="#v-pills-forum" role="tab" aria-controls="v-pills-forum" aria-selected="false"> 
+                    <i class="fa-solid fa-comments"></i> 
+                    Forum
+                </a>
+                <a class="sidebarLink nav-link" id="v-pills-users-tab" data-bs-toggle="pill" href="#v-pills-users" role="tab" aria-controls="v-pills-users" aria-selected="false">
+                    <i class="fa-solid fa-users"></i>  
+                    Users
+                </a>
+                <a class="sidebarLink nav-link" id="v-pills-systemSettings-tab" data-bs-toggle="pill" href="#v-pills-systemSettings" role="tab" aria-controls="v-pills-systemSettings" aria-selected="false">
+                    <i class="fa-solid fa-gear"></i> 
+                    System Settings
+                </a>
+            </div>
+
+            <div class="tab-content flex-grow-1" id="v-pills-tabContent">
+                <!-- Home -->
+                <div class="tab-pane fade p-4 show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                    <div class="homeContainer p-4 text-white">
+                        <h5>Welcome back Admin!</h5>
+                        <hr>
+                        <div class="d-flex gap-3 justify-content-between">
+                            <div class="alumniSection d-flex align-items-center justify-content-between px-4 py-5">
+                                <section>
+                                    <h5 class="mb-0 text-white">2</h5>
+                                    <p class="mb-0">Alumni</p>
+                                </section>
+                                <i class="alumniSectionIcon fa-solid fa-users"></i>
+                            </div>
+                            <div class="forumTopicsSection d-flex align-items-center justify-content-between px-4 py-5">
+                                <section>
+                                    <h5 class="mb-0 text-white">2</h5>
+                                    <p class="mb-0">Forum Topics</p>
+                                </section>
+                                <i class="fas fa-comment"></i>
+                            </div>
+                            <div class="postedJobsSection d-flex align-items-center justify-content-between px-4 py-5">
+                                <section>
+                                    <h5 class="mb-0 text-white">2</h5>
+                                    <p class="mb-0">Posted Jobs</p>
+                                </section>
+                                <i class="fa-solid fa-briefcase"></i>
+                            </div>
+                            <div class="upcomingEventsSection d-flex align-items-center justify-content-between px-4 py-5">
+                                <section>
+                                    <h5 class="mb-0 text-white">2</h5>
+                                    <p class="mb-0">Upcoming Events</p>
+                                </section>
+                                <i class="fa-solid fa-calendar-days"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery -->
+                <!-- <div class="tab-pane fade p-4" id="v-pills-gallery" role="tabpanel" aria-labelledby="v-pills-gallery-tab">
+                    <div class="d-flex gap-3">
+                        <div class="uploadContainer">
+                            <div class="card">
+                                <div class="card-header">
+                                    Upload
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-4">
+                                        <label for="formFile" class="form-label">Image</label>
+                                        <input class="form-control" type="file" id="formFile">
+                                    </div>
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" style="height: 100px"></textarea>
+                                        <label for="floatingTextarea">Short Description</label>
+                                    </div>
+                                </div>
+                                <div class="card-footer text-muted d-flex justify-content-center">
+                                    <button class="btn saveButton py-1 px-3" type="button">Save</button>
+                                    <button class="btn cancelButton py-1 px-3" type="button">Cancel</button>
+                                </div>
+                            </div>
+                        </div>  
+                        <div class="galleryListContainer">
+                            <div class="card">
+                                <div class="card-header">
+                                    Gallery List
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between gap-5 align-items-center mb-3">
+                                        <div class="filterEntrySection">
+                                            <label for="entryNumbers">
+                                            Show
+                                            <select id="entryNumbers">
+                                                <option>5</option>
+                                                <option>10</option>
+                                                <option>15</option>
+                                                <option>20</option>
+                                                <option>25</option>
+                                            </select>
+                                            entries
+                                            </label>
+                                        </div>
+                                        <div class="searchEntrySection input-group">
+                                            <input type="search" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="input-group-right">
+                                            <span class="input-group-text" id="input-group-right-example">
+                                                <i class="fa-solid fa-magnifying-glass"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <table class="table table-bordered text-center table-hover">
+                                        <thead>
+                                            <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Image</th>
+                                            <th scope="col">Description</th>
+                                            <th scope="col">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+<?php                           for ($x = 1; $x <= 5; $x++) { ?>
+                                            <tr class="align-middle">
+                                                <th scope="row"><?= $x ?></th>
+                                                <td>
+                                                    <img class="entryImage" src="https://career.astra.co.id/static/media/image_not_available1.94c0c57d.png">
+                                                </td>
+                                                <td>
+                                                    <p class="mb-0 small" id="galleryDescription"> 
+                                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias laudantium omnis vitae recusandae tempora aut nam, fugiat quis inventore at dicta, eius illum voluptatibus, ab consectetur earum distinctio nemo consequatur.
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex flex-column gap-2">
+                                                        <button class="editButton btn text-nowrap editGalleryButton" type="button">
+                                                            <i class="fa-regular fa-pen-to-square"></i>
+                                                            Edit
+                                                        </button>
+                                                        <button class="deleteButton btn text-nowrap deleteGalleryButton" type="button">
+                                                            <i class="fa-solid fa-trash"></i>
+                                                            Delete
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+<?php                           } ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="card-footer text-muted">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            Showing 1 to 5 of 5 entries
+                                        </div>
+                                        <nav aria-label="Page navigation">
+                                            <ul class="pagination mt-3">
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Prev</a>
+                                                </li>
+                                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#">Next</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- Course List -->
+                <div class="tab-pane fade p-4 border-bottom border border-2" id="v-pills-courseList" role="tabpanel" aria-labelledby="v-pills-courseList-tab">
+                    <div class="d-flex gap-3">
+                        <form method="post" action="/add">
+                        <div class="courseFormContainer">
+                            <div class="card">
+                                <div class="card-header">
+                                    Course Form
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-floating mb-3">
+                                        
+                                        <input type="text" name="cname" class="form-control" id="floatingInput" placeholder="Course">
+                                        <label for="floatingInput">Course</label>
+                                    </div>
+                                </div>
+                                <div class="card-footer text-muted">
+                                    <div class="card-footer text-muted d-flex justify-content-center">
+                                        <input type="submit" class="btn saveButton py-1 px-3" name="submit" value="Save">
+                                        <button class="btn cancelButton py-1 px-3" type="button">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>    
+                        </form>
+                        <div class="courseListContainer">
+                            <div class="card">
+                                <div class="card-header">
+                                    Course List
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between gap-5 align-items-center mb-3">
+                                        <div class="filterEntrySection">
+                                            <label for="entryNumbers">
+                                            Show
+                                            <select id="entryNumbers">
+                                                <option>5</option>
+                                                <option>10</option>
+                                                <option>15</option>
+                                                <option>20</option>
+                                                <option>25</option>
+                                            </select>
+                                            entries
+                                            </label>
+                                        </div>
+                                        <div class="searchEntrySection input-group">
+                                            <input type="search" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="input-group-right">
+                                            <span class="input-group-text" id="input-group-right-example">
+                                                <i class="fa-solid fa-magnifying-glass"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <table class="table table-bordered text-center table-hover table-responsive">
+                                        <thead>
+                                            <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Course</th>
+                                            <th scope="col">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <% var c = 0 %>
+                                            <% courses.forEach(function(x) { c = c + 1 %> 
+                                            
+                                            <tr class="align-middle">
+                                                
+                                                    <th scope="row"><%= c %></th>
+													<td class="text-start">
+														<p class="mb-0" id="courseListTitle"><%= x.name %></p>
+                                                        <p Style="display:none;" class="mb-0" id="courseID"><%= x.name %></p>
+													</td>
+												
+                                                
+                                                <td class="text-center text-nowrap" style="width: 1%;">
+                                                    <div>
+                                                        <button class="editButton btn text-nowrap courseListEditButton" type="button">
+                                                            <i class="fa-regular fa-pen-to-square"></i>
+                                                            Edit
+                                                           
+                                                        </button>
+                                                        <button class="deleteButton btn text-nowrap courseListDeleteButton" type="button">
+                                                            <i class="fa-solid fa-trash"></i>
+                                                            Delete
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <% }) %>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="card-footer text-muted">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            Showing 1 to 1 of 1 entries
+                                        </div>
+                                        <nav aria-label="Page navigation">
+                                            <ul class="pagination mt-3">
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Prev</a>
+                                                </li>
+                                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#">Next</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alumni List -->
+                <div class="tab-pane fade p-4" id="v-pills-alumniList" role="tabpanel" aria-labelledby="v-pills-alumniList-tab">
+                    <div class="card">
+                        <div class="card-header">
+                            List of Alumni
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between gap-5 align-items-center mb-3">
+                                <div class="filterEntrySection">
+                                    <label for="entryNumbers">
+                                    Show
+                                    <select id="entryNumbers">
+                                        <option>5</option>
+                                        <option>10</option>
+                                        <option>15</option>
+                                        <option>20</option>
+                                        <option>25</option>
+                                    </select>
+                                    entries
+                                    </label>
+                                </div>
+                                <div class="searchEntrySection input-group">
+                                    <input type="search" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="input-group-right">
+                                    <span class="input-group-text" id="input-group-right-example">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <table class="table table-bordered text-center table-hover table-responsive">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Avatar</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Course Graduated</th>
+                                        <th scope="col">Year Graduated</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% var c = 0 %>
+                                    <% users2.forEach(function(u2) { c = c + 1  %> 
+                                        <tr class="align-middle">
+                                            <th scope="row"><%= c %></th>
+                                            <td>
+                                                <img class="alumniAvatar" src="/assets/images/avatarx/<%= u2.ipath %>" >
+                                            </td>
+                                            <td class="text-center">
+                                                <p class="mb-0" id="alUname"><%= u2.fn %></p>
+                                            </td>
+                                            <td class="text-center">
+                                                <p class="mb-0"><%= u2.cgrad%></p>
+                                            </td>
+                                            <td>
+                                                <p class="mb-0 bg-primary text-white rounded"><%= u2.ygrad %></p>
+                                            </td>
+                                            <td class="text-center text-nowrap" style="width: 1%;">
+                                                <div>
+                                                    <button class="editButton btn text-nowrap" id="viewButton" type="button">
+                                                        <i class="fa-solid fa-eye"></i>
+                                                        View
+                                                    </button>
+                                                    <button class="deleteButton btn text-nowrap alumniListDeleteButton" type="button">
+                                                        <i class="fa-solid fa-trash"></i>
+                                                        Delete
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    <% }) %>
+
+                                    
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    Showing 1 to 2 of 2 entries
+                                </div>
+                                <nav aria-label="Page navigation">
+                                    <ul class="pagination mt-3">
+                                        <li class="page-item">
+                                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Prev</a>
+                                        </li>
+                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">Next</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jobs -->
+                <div class="tab-pane fade p-4" id="v-pills-jobs" role="tabpanel" aria-labelledby="v-pills-jobs-tab">
+                    <div class="card">
+                        <div class="card-header d-flex align-items-center justify-content-between">
+                            Jobs List
+                            <button class="addJobButton btn py-0">
+                                <i class="fa-solid fa-plus"></i>
+                                New
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between gap-5 align-items-center mb-3">
+                                <div class="filterEntrySection">
+                                    <label for="entryNumbers">
+                                    Show
+                                    <select id="entryNumbers">
+                                        <option>5</option>
+                                        <option>10</option>
+                                        <option>15</option>
+                                        <option>20</option>
+                                        <option>25</option>
+                                    </select>
+                                    entries
+                                    </label>
+                                </div>
+                                <div class="searchEntrySection input-group">
+                                    <input type="search" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="input-group-right">
+                                    <span class="input-group-text" id="input-group-right-example">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <table class="table table-bordered text-center table-hover table-responsive">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Company</th>
+                                        <th scope="col">Job Title</th>
+                                        <th scope="col">Posted By</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="align-middle">
+                                        <th scope="row">1</th>
+                                        <td>
+                                            <p class="mb-0" id="jobCompanyName">Software Inc,</p>
+                                        </td>
+                                        <td class="text-center">
+                                            <p class="mb-0" id="jobTitle">Web Developer</p>
+                                        </td>
+                                        <td class="text-center">
+                                            <p class="mb-0">Juan Dela Cruz</p>
+                                        </td>
+                                        <td class="text-center text-nowrap" style="width: 1%;">
+                                            <div>
+                                                <button class="editButton btn text-nowrap bg-primary" id="jobViewButton" type="button">
+                                                    <i class="fa-solid fa-eye"></i>
+                                                    View
+                                                </button>
+                                                <button class="editButton btn text-nowrap" id="jobEditButton" type="button">
+                                                    <i class="fa-solid fa-edit"></i>
+                                                    Edit
+                                                </button>
+                                                <button class="deleteButton btn text-nowrap" id="jobDeleteButton" type="button">
+                                                    <i class="fa-solid fa-trash"></i>
+                                                    Delete
+                                                </button>
+                                            </div>
+                                        </td>
+                                        <input type="hidden" id="jobLocation" value="Masbate City">
+                                        <input type="hidden" id="jobDescription" value="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo, voluptates tempora! Repellendus tempore tenetur, consequatur modi ut corrupti, ducimus quis nemo debitis similique omnis numquam earum harum distinctio cum nulla.">
+                                    </tr>
+                                    <tr class="align-middle">
+                                        <th scope="row">2</th>
+                                        <td>
+                                            <p class="mb-0" id="jobCompanyName">IT Industry</p>
+                                        </td>
+                                        <td class="text-center">
+                                            <p class="mb-0" id="jobTitle">Back-End Developer</p>
+                                        </td>
+                                        <td class="text-center">
+                                            <p class="mb-0">Tito Badang</p>
+                                        </td>
+                                        <td class="text-center text-nowrap" style="width: 1%;">
+                                            <div>
+                                                <button class="editButton btn text-nowrap bg-primary" id="jobViewButton" type="button">
+                                                    <i class="fa-solid fa-eye"></i>
+                                                    View
+                                                </button>
+                                                <button class="editButton btn text-nowrap" id="jobEditButton" type="button">
+                                                    <i class="fa-solid fa-edit"></i>
+                                                    Edit
+                                                </button>
+                                                <button class="deleteButton btn text-nowrap" id="jobDeleteButton" type="button">
+                                                    <i class="fa-solid fa-trash"></i>
+                                                    Delete
+                                                </button>
+                                            </div>
+                                        </td>
+                                        <input type="hidden" id="jobLocation" value="Las Pinas">
+                                        <input type="hidden" id="jobDescription" value="The quick brown fox jumps over the lazy dog near in the river bank.">
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    Showing 1 to 2 of 2 entries
+                                </div>
+                                <nav aria-label="Page navigation">
+                                    <ul class="pagination mt-3">
+                                        <li class="page-item">
+                                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Prev</a>
+                                        </li>
+                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">Next</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Events -->
+                <div class="tab-pane fade p-4" id="v-pills-events" role="tabpanel" aria-labelledby="v-pills-events-tab">
+                    <div class="card">
+                        <div class="card-header d-flex align-items-center justify-content-between">
+                            List of Events
+                            <button class="addEventButton btn py-0">
+                                <i class="fa-solid fa-plus"></i>
+                                New Entry
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between gap-5 align-items-center mb-3">
+                                <div class="filterEntrySection">
+                                    <label for="entryNumbers">
+                                    Show
+                                    <select id="entryNumbers">
+                                        <option>5</option>
+                                        <option>10</option>
+                                        <option>15</option>
+                                        <option>20</option>
+                                        <option>25</option>
+                                    </select>
+                                    entries
+                                    </label>
+                                </div>
+                                <div class="searchEntrySection input-group">
+                                    <input type="search" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="input-group-right">
+                                    <span class="input-group-text" id="input-group-right-example">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <table class="table table-bordered text-center table-hover table-responsive">
+                                <thead>
+                                    <tr class="align-middle">
+                                        <th scope="col">#</th>
+                                        <th scope="col">Schedule</th>
+                                        <th scope="col">Title</th>
+                                        <th scope="col">Description</th>
+                                        <th scope="col">Commited To Participate</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="align-middle">
+                                        <th scope="row">1</th>
+                                        <td>
+                                            <p class="mb-0" id="eventSchedule">April 11, 2023 07:34 PM</p>
+                                        </td>
+                                        <td class="text-center">
+                                            <p class="mb-0" id="eventTitle">Event Name Here</p>
+                                        </td>
+                                        <td class="text-start">
+                                            <p class="mb-0 small" id="eventDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, non nobis hic voluptates fugiat nesciunt quaerat itaque perferendis consequatur eaque error qui similique pariatur eveniet rem illum? Earum, temporibus ullam.</p>
+                                        </td>
+                                        <td class="text-center">
+                                            <p class="mb-0" id="eventParticipants">1</p>
+                                        </td>
+                                        <td class="text-center text-nowrap px-4" style="width: 1%;">
+                                            <div class="d-flex flex-column gap-2">
+                                                <button class="editButton btn text-nowrap bg-primary" id="eventViewButton" type="button">
+                                                    <i class="fa-solid fa-eye"></i>
+                                                    View
+                                                </button>
+                                                <button class="editButton btn text-nowrap" id="eventEditButton" type="button">
+                                                    <i class="fa-solid fa-edit"></i>
+                                                    Edit
+                                                </button>
+                                                <button class="deleteButton btn text-nowrap" id="eventDeleteButton" type="button">
+                                                    <i class="fa-solid fa-trash"></i>
+                                                    Delete
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    Showing 1 to 2 of 2 entries
+                                </div>
+                                <nav aria-label="Page navigation">
+                                    <ul class="pagination mt-3">
+                                        <li class="page-item">
+                                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Prev</a>
+                                        </li>
+                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">Next</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Forum -->
+                <div class="tab-pane fade p-4" id="v-pills-forum" role="tabpanel" aria-labelledby="v-pills-forum-tab">
+                    <div class="card">
+                        <div class="card-header d-flex align-items-center justify-content-between">
+                            Forum List
+                            <button class="addForumButton btn py-0">
+                                <i class="fa-solid fa-plus"></i>
+                                New Entry
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between gap-5 align-items-center mb-3">
+                                <div class="filterEntrySection">
+                                    <label for="entryNumbers">
+                                    Show
+                                    <select id="entryNumbers">
+                                        <option>5</option>
+                                        <option>10</option>
+                                        <option>15</option>
+                                        <option>20</option>
+                                        <option>25</option>
+                                    </select>
+                                    entries
+                                    </label>
+                                </div>
+                                <div class="searchEntrySection input-group">
+                                    <input type="search" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="input-group-right">
+                                    <span class="input-group-text" id="input-group-right-example">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <table class="table table-bordered text-center table-hover table-responsive">
+                                <thead>
+                                    <tr class="align-middle">
+                                        <th scope="col">#</th>
+                                        <th scope="col">Topic</th>
+                                        <th scope="col">Description</th>
+                                        <th scope="col" class="text-nowrap">Created By</th>
+                                        <th scope="col">Comments</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="align-middle">
+                                        <th scope="row">1</th>
+                                        <td>
+                                            <p class="mb-0" id="forumTopic">Sample Topic 1</p>
+                                        </td>
+                                        <td class="text-start">
+                                            <p class="mb-0 small" id="forumDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, non nobis hic voluptates fugiat nesciunt quaerat itaque perferendis consequatur eaque error qui similique pariatur eveniet rem illum? Earum, temporibus ullam.</p>
+                                        </td>
+                                        <td class="text-center">
+                                            <p class="mb-0" id="forumCreatedBy">Juan Dela Cruz</p>
+                                        </td>
+                                        <td class="text-center">
+                                            <p class="mb-0" id="forumComments">1</p>
+                                        </td>
+                                        <td class="text-center text-nowrap px-4" style="width: 1%;">
+                                            <div class="d-flex flex-column gap-2">
+                                                <button class="editButton btn text-nowrap bg-primary" id="forumViewButton" type="button">
+                                                    <i class="fa-solid fa-eye"></i>
+                                                    View
+                                                </button>
+                                                <button class="editButton btn text-nowrap" id="forumEditButton" type="button">
+                                                    <i class="fa-solid fa-edit"></i>
+                                                    Edit
+                                                </button>
+                                                <button class="deleteButton btn text-nowrap" id="forumDeleteButton" type="button">
+                                                    <i class="fa-solid fa-trash"></i>
+                                                    Delete
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    Showing 1 to 2 of 2 entries
+                                </div>
+                                <nav aria-label="Page navigation">
+                                    <ul class="pagination mt-3">
+                                        <li class="page-item">
+                                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Prev</a>
+                                        </li>
+                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">Next</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Users -->
+                <div class="tab-pane fade p-4" id="v-pills-users" role="tabpanel" aria-labelledby="v-pills-users-tab">
+                    <div class="card">
+                        <div class="card-header d-flex align-items-center justify-content-between">
+                            Users List
+                            <button class="addUserButton btn py-0">
+                                <i class="fa-solid fa-plus"></i>
+                                New Entry
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between gap-5 align-items-center mb-3">
+                                <div class="filterEntrySection">
+                                    <label for="entryNumbers">
+                                    Show
+                                    <select id="entryNumbers">
+                                        <option>5</option>
+                                        <option>10</option>
+                                        <option>15</option>
+                                        <option>20</option>
+                                        <option>25</option>
+                                    </select>
+                                    entries
+                                    </label>
+                                </div>
+                                <div class="searchEntrySection input-group">
+                                    <input type="search" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="input-group-right">
+                                    <span class="input-group-text" id="input-group-right-example">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <table class="table table-bordered text-center table-hover table-responsive">
+                                <thead>
+                                    <tr class="align-middle">
+                                        <th scope="col">#</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Username</th>
+                                        <th scope="col">Type</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <% var c = 0 %>
+                                    <% users.forEach(function(user){ c = c + 1%>
+                                        <tr class="align-middle">
+                                            <th scope="row"><%= c %></th>
+                                            <td>
+                                                <p class="mb-0" id="userName"><%= user.fn %></p>
+                                            </td>
+                                            <td class="text-center">
+                                                <p class="mb-0" id="userUsername"><%= user.uname %></p>
+                                            </td>
+                                            <td class="text-center">
+                                                <p class="mb-0" id="userType"><%= user.utype %></p>
+                                            </td>
+                                            <td class="text-center text-nowrap px-4" style="width: 1%;">
+                                                <div>
+                                                    <button class="editButton btn text-nowrap" id="userEditButton" type="button">
+                                                        <i class="fa-solid fa-edit"></i>
+                                                        Edit
+                                                    </button>
+                                                    <button class="deleteButton btn text-nowrap" id="userDeleteButton" type="button">
+                                                        <i class="fa-solid fa-trash"></i>
+                                                        Delete
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    <% }) %>
+
+                                   
+                                 
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    Showing 1 to 2 of 2 entries
+                                </div>
+                                <nav aria-label="Page navigation">
+                                    <ul class="pagination mt-3">
+                                        <li class="page-item">
+                                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Prev</a>
+                                        </li>
+                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">Next</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- System Settings -->
+                <div class="tab-pane fade p-4" id="v-pills-systemSettings" role="tabpanel" aria-labelledby="v-pills-systemSettings-tab">
+                    <div class="card">
+                        <div class="card-header">
+                            System Settings
+                        </div>
+                        <div class="card-body px-5 py-3">
+                            <label for="formControlInput" class="form-label">System Name</label>
+                            <input type="text" class="form-control mb-3" id="formControlInput" value="Alumni Management System">
+                            <label for="formControlInput" class="form-label">Email</label>
+                            <input type="email" class="form-control mb-3" id="formControlInput" value="alumnimanagement@email.com">
+                            <label for="formControlInput" class="form-label">System Name</label>
+                            <input type="text" class="form-control mb-3" id="formControlInput" value="09123456789">
+                            <label for="formControlTextArea" class="form-label">About Content</label>
+                            <textarea class="form-control" id="textEditor" rows="3">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. In praesentium sint architecto optio. Culpa, dicta ex ab repellendus, aperiam consequatur incidunt porro tempora, dolorem minima harum nam quia. Excepturi, porro!
+                            </textarea>
+                        </div>
+                        <div class="card-footer py-3">
+                            <button class="btn d-block mx-auto sysSettingSaveButton" type="button"><i class="fa-solid fa-floppy-disk"></i> Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

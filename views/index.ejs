@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Alumni Management System</title>
+        <link rel="shortcut icon" type="image/x-icon" href="./assets/images/favicon.ico">
+        <link rel="stylesheet" href="./assets/css/normalize.css">
+        <link rel="stylesheet" href="./assets/css/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="./assets/css/font.css">
+        <link rel="stylesheet" href="./assets/css/header.css">
+        <link rel="stylesheet" href="./assets/css/navbar.css">
+        <link rel="stylesheet" href="./assets/css/semiFooter.css">
+        <link rel="stylesheet" href="./assets/css/footer.css">
+        <link rel="stylesheet" href="./assets/css/index.css">
+        <script src="./assets/js/bootstrap/bootstrap.min.js"></script>
+        <script src="./assets/js/jquery/jquery-3.6.4.min.js"></script>
+        <script src="./assets/js/navbar.js"></script>
+    </head>
+    <body>
+      
+        <!-- Header -->
+        <header class="container-fluid sticky-top">
+            <div class="container d-flex justify-content-between">
+                <div class="text-white py-3 d-flex align-items-center gap-3">
+                    <img class="websiteLogo" src="./assets/images/oc_logo.png" alt="OC Logo">
+                    <section class="text-center">
+                        <h3 class="m-0">OSMEÑA COLLEGES</h3>
+                        <p class="m-0">Aspire...Achieve...Advance!</p>
+                    </section>
+                </div>
+                <div class="headerSearchDirectory mb-3">
+                    <div class="headerSearchDirectoryInner pt-3 px-3 flex-grow text-center">
+                        <p>Search the Directory</p>
+                    </div>
+                </div>
+                <div class="d-flex pb-3 flex-column justify-content-between">
+                    <div class="align-self-start d-flex justify-content-between gap-3">
+                        <div class="visitor">
+                            <div class="visitorInner px-5">Visitor</div>
+                        </div>
+                        <div class="alumna">
+                            <div class="alumnaInner px-5">Alumna 67</div>
+                            
+                        </div>
+                    </div>
+                    <form class="d-flex align-self-end">
+                        <input class="headerSearchBar form-control me-2" type="search" placeholder="Search by title, skill or company" aria-label="Search">
+                        <i class="headerSearchIcon fa-solid fa-magnifying-glass"></i>
+                    </form>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-xl navbar-light bg-transparent container-fluid py-4">
+            <div class="container">
+                <form class="d-flex d-lg-none">
+                    <input class="searchBar form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="searchButton btn btn-outline-success" type="submit">Search</button>
+                </form>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarBasic" aria-controls="navbarBasic" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarBasic">
+                    <ul class="navbar-nav mx-auto mb-2 mb-xl-0 ">
+                        <li class="nav-item">
+                            <a class="nav-link px-3" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="/my_network">My Network</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="/job_opportunities">Job Opportunities</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="/forums">Forums</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="#">News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="#">Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="/about">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="#">Schools</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="#">Contact</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="../AlumniManagementSystem/profile_page.php" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img class="userProfilePicture" src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="User Profile Picture">
+                                Me
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Carousel -->
+        <div id="carouselWithIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="caption p-3 ms-5">
+                <h2>Become a member</h2>
+                <p class="context mb-0">
+                    On top of providing affection to your school, which is, for many of us, the major reason, your membership gives you many attractive and exclusive advantages
+                </p>
+            </div>
+            <!-- Indicators -->
+            <!-- <ol class="carousel-indicators">
+                <li data-bs-target="#carouselWithIndicators" data-bs-slide-to="0" class="active"></li>
+                <li data-bs-target="#carouselWithIndicators" data-bs-slide-to="1"></li>
+                <li data-bs-target="#carouselWithIndicators" data-bs-slide-to="2"></li>
+            </ol> -->
+            <!-- Slides -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./assets/images/carousel/slide1.jpg" class="slides d-block w-100" alt="Slide 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carousel/slide2.jpg" class="slides d-block w-100" alt="Slide 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carousel/slide3.jpg" class="slides d-block w-100" alt="Slide 1">
+                </div>
+            </div>
+            <!-- Controls -->
+            <div class="controls">
+                <a class="carouselControls carousel-control-prev" href="#carouselWithIndicators" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                    <!-- <i class="fa-solid fa-chevron-left"></i> -->
+                </a>
+                <a class="carouselControls carousel-control-next" href="#carouselWithIndicators" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                    <!-- <i class="fa-solid fa-chevron-right"></i> -->
+                </a>
+            </div>
+        </div>
+
+        <!-- Latest News -->
+        <div class="latestNewsSection container-fluid px-0 mb-5">
+            <div class="container">
+                <!-- Latest News Nav -->
+                <button class="latestNewsNav btn text-white d-flex gap-3 align-items-center justify-content-between px-5" type="button">
+                    <h4 class="mb-0 text-white">Latest News</h4>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+                <!-- News Section -->
+                <div class="d-flex gap-5 p-4 pt-5">
+                    <div class="news pb-4">
+                        <img class="newsThumbnail img-thumbnail mb-3" src="https://oc.edu.ph/09x)img_u/norlejr_08-13-2020_02:15:19%20PMBB10c2zu.jpg" alt="News Thumbnail">
+                        <section>
+                            <p>
+                                Lorem 90 ipsum dolor sit amet consectetur adipisicing elit. Accusantium nobis labore quasi, officiis quibusdam voluptatibus? Iure reiciendis maiores laudantium id vero quisquam pariatur eligendi et, eius architecto, beatae quas necessitatibus!
+                                
+                                
+                            
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt officia natus nulla reiciendis, beatae quisquam voluptas, similique mollitia tenetur reprehenderit unde praesentium veritatis quam rerum, nisi alias? Adipisci, velit enim.
+                            </p>
+                        </section>
+                        <button class="readMoreButton btn px-4 float-end" type="button">
+                            <i class="fa-solid fa-chevron-right"></i>
+                            CLICK HERE FOR MORE
+                        </button>
+                    </div>
+                    <div class="news">
+                        <img class="newsThumbnail img-thumbnail mb-3" src="https://oc.edu.ph/09x)img_u/norlejr_08-13-2020_02:15:19%20PMBB10c2zu.jpg" alt="News Thumbnail">
+                        <section>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium nobis labore quasi, officiis quibusdam voluptatibus? Iure reiciendis maiores laudantium id vero quisquam pariatur eligendi et, eius architecto, beatae quas necessitatibus!
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt officia natus nulla reiciendis, beatae quisquam voluptas, similique mollitia tenetur reprehenderit unde praesentium veritatis quam rerum, nisi alias? Adipisci, velit enim.
+                            </p>
+                        </section>
+                        <button class="readMoreButton btn px-4 float-end" type="button">
+                            <i class="fa-solid fa-chevron-right"></i>
+                            CLICK HERE FOR MORE
+                        </button>
+                    </div>
+                    <div class="news">
+                        <img class="newsThumbnail img-thumbnail mb-3" src="https://oc.edu.ph/09x)img_u/norlejr_08-13-2020_02:15:19%20PMBB10c2zu.jpg" alt="News Thumbnail">
+                        <section>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium nobis labore quasi, officiis quibusdam voluptatibus? Iure reiciendis maiores laudantium id vero quisquam pariatur eligendi et, eius architecto, beatae quas necessitatibus!
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt officia natus nulla reiciendis, beatae quisquam voluptas, similique mollitia tenetur reprehenderit unde praesentium veritatis quam rerum, nisi alias? Adipisci, velit enim.
+                            </p>
+                        </section>
+                        <button class="readMoreButton btn px-4 float-end" type="button">
+                            <i class="fa-solid fa-chevron-right"></i>
+                            CLICK HERE FOR MORE
+                        </button>
+                    </div>
+                    <div class="news">
+                        <img class="newsThumbnail img-thumbnail mb-3" src="https://oc.edu.ph/09x)img_u/norlejr_08-13-2020_02:15:19%20PMBB10c2zu.jpg" alt="News Thumbnail">
+                        <section>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium nobis labore quasi, officiis quibusdam voluptatibus? Iure reiciendis maiores laudantium id vero quisquam pariatur eligendi et, eius architecto, beatae quas necessitatibus!
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt officia natus nulla reiciendis, beatae quisquam voluptas, similique mollitia tenetur reprehenderit unde praesentium veritatis quam rerum, nisi alias? Adipisci, velit enim.
+                            </p>
+                        </section>
+                        <button class="readMoreButton btn px-4 float-end" type="button">
+                            <i class="fa-solid fa-chevron-right"></i>
+                            CLICK HERE FOR MORE
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Upcoming Events -->
+        <div class="container-fluid px-0 bg-light mb-5">
+            <div class="d-flex gap-5 container mb-5">
+                <!-- Upcoming Event Section -->
+                <div class="upcomingEventsSection pt-5 p-5 flex-shrink">
+                    <button class="upcomingEventsNav btn text-white d-flex gap-3 align-items-center justify-content-between px-5" type="button">
+                        <h4 class="mb-0 text-white">Upcoming Events</h4>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                    <div class="d-flex gap-5">
+                        <div>
+                            <h6>Osmeña Colleges is the official partner of OBRA Masbateño 2022 for Culinary Arts!</h6>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, error eligendi impedit omnis tempore recusandae sapiente perferendis nulla accusamus, mollitia unde. Maxime nobis laborum rem dolor cupiditate quo non similique.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam id obcaecati earum consequatur omnis eveniet officia ad rerum fugiat iure maxime est similique illum quidem soluta, sequi nesciunt ea ducimus.
+                            </p>
+                        </div>
+                        <div class="">
+                            <img src="./assets/images/sample.png">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links Section -->
+                <div class="quickLinksSection flex-shrink text-center p-4">
+                    <h4 class="mb-4">Quick Links</h4>
+                    <section class="quickLinks d-flex gap-3 mb-3 align-items-center">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <h6><a href="">Academic Calendar</a></h6>
+                    </section>
+                    <section class="quickLinks d-flex gap-3 mb-3 align-items-center">
+                        <i class="fa-solid fa-book"></i>
+                        <h6><a href="">Student</a></h6>
+                    </section>
+                    <section class="quickLinks d-flex gap-3 mb-3 align-items-center">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <h6><a href="">Alumni</a></h6>
+                    </section>
+                </div>
+            </div>
+
+            <!-- Announcement Section -->
+            <div class="container-fluid px-0">
+                <div class="container">
+                    <div class="announcementSection pt-5 p-4 d-flex gap-2">
+                        <button class="announcementNav btn text-white d-flex gap-3 align-items-center justify-content-between px-5" type="button">
+                            <h4 class="mb-0 text-white">Announcement</h4>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                        <div class="announcement p-3 pb-4">
+                            <section class="d-flex gap-2">
+                                <h6><i class="fa-solid fa-chevron-right"></i>SUGGESTED ACTIVITIES, TEACHING AND LEARNING RESOURCES IN IMPLEMENTING OFFLINE MODULAR DISTANCE LEARNING DELIVERY</h6>
+                            </section>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum cum iusto distinctio vel sunt, minus numquam vitae ab, accusantium ut aut deleniti quidem earum perspiciatis, harum ipsum amet nam recusandae?
+                            </p>
+                            <button class="readMoreButton btn px-4 float-end" type="button">
+                                <i class="fa-solid fa-chevron-right"></i>
+                                CLICK HERE FOR MORE
+                            </button>
+                        </div>
+                        <div class="announcement p-3">
+                            <section class="d-flex gap-2">
+                                <h6><i class="fa-solid fa-chevron-right"></i>Lebanon's leaders warned in July about explosives at port: Documents</h6>
+                            </section>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse doloribus numquam molestias eius quam veniam delectus sed labore eligendi quasi optio, cupiditate iusto, temporibus, vitae ipsam quaerat officia amet vel.
+                            </p>
+                            <button class="readMoreButton btn px-4 float-end" type="button">
+                                <i class="fa-solid fa-chevron-right"></i>
+                                CLICK HERE FOR MORE
+                            </button>
+                        </div>
+                        <div class="p-3">
+                            <div class="showMoreOuterPage d-flex">
+                                <div class="showMoreInnerPage d-flex flex-column p-3">
+                                    <h4 class="text-center">SHOW MORE</h4>
+                                    <i class="fa-solid fa-circle-plus showMoreIcon text-center"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Semi Footer -->
+        <div class="semiFooter container-fluid">
+            <div class="container d-flex gap-3 justify-content-between pt-5 pb-3">
+                <div class="alumniNews">
+                    <h6 class="semiFooterTitle">ALUMNI NEWS</h6>
+                    <ul class="semiFooterLists">
+                        <li>
+                            <a href="">News from the alumni</a>
+                        </li>
+                        <li>
+                            <a href="">News from the school</a>
+                        </li>
+                        <li>
+                            <a href="">Submit News</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="getInvolved">
+                    <h6 class="semiFooterTitle">Get Involved</h6>
+                    <ul class="semiFooterLists">
+                        <li>
+                            <a href="">Online Subscription</a>
+                        </li>
+                        <li>
+                            <a href="">Become a member</a>
+                        </li>
+                        <li>
+                            <a href="">Become a sponsor</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="peopleAndNetwork">
+                    <h6 class="semiFooterTitle">People & Network</h6>
+                    <ul class="semiFooterLists">
+                        <li>
+                            <a href="">Alumni Directory</a>
+                        </li>
+                        <li>
+                            <a href="">Clubs and Groups</a>
+                        </li>
+                        <li>
+                            <a href="">Ambassadors</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="peopleAndAboutUs">
+                    <h6 class="semiFooterTitle">People & About Us</h6>
+                    <ul class="semiFooterLists">
+                        <li>
+                            <a href="">Mission</a>
+                        </li>
+                        <li>
+                            <a href="">History</a>
+                        </li>
+                        <li>
+                            <a href="">Annual report</a>
+                        </li>
+                        <li>
+                            <a href="">Board of Directors</a>
+                        </li>
+                        <li>
+                            <a href="">Office Team</a>
+                        </li>
+                        <li>
+                            <a href="">Impact on Business & Society</a>
+                        </li>
+                        <li>
+                            <a href="">Congress</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+    <footer>
+        <div class="footer container-fluid text-white py-5">
+            <div class="container d-flex flex-column justify-content-center align-items-center">
+                <div class="footerSocialMediaSection d-flex gap-4">
+                    <a class="footerSocMed" href="www.facebook.com"><i class="fa-brands fa-square-facebook"></i></a>
+                    <a class="footerSocMed" href="www.twitter.com"><i class="fa-brands fa-square-twitter"></i></a>
+                    <a class="footerSocMed" href="wwww.instagram.com"><i class="fa-brands fa-square-instagram"></i></a>
+                    <a class="footerSocMed" href="www.youtube.com"><i class="fa-brands fa-square-youtube"></i></a>
+                </div>
+                <p class="footerAllRightsReserved text-center mb-0">
+                    &copy; 2023 All rights reserved. The Osmeña Colleges is an equal opportunity educator and employer. Privacy Statement Report Web Disability-Related Issue
+                </p>
+            </div>
+        </div>
+    </footer>
+</html>

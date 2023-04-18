@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Network</title>
+        <link rel="shortcut icon" type="image/x-icon" href="./assets/images/favicon.ico">
+        <link rel="stylesheet" href="./assets/css/normalize.css">
+        <link rel="stylesheet" href="./assets/css/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="./assets/css/font.css">
+        <link rel="stylesheet" href="./assets/css/header.css">
+        <link rel="stylesheet" href="./assets/css/navbar.css">
+        <link rel="stylesheet" href="./assets/css/semiFooter.css">
+        <link rel="stylesheet" href="./assets/css/footer.css">
+        <link rel="stylesheet" href="./assets/css/myNetwork.css">
+        <script src="./assets/js/bootstrap/bootstrap.min.js"></script>
+        <script src="./assets/js/jquery/jquery-3.6.4.min.js"></script>
+        <script src="./assets/js/navbar.js"></script>
+    </head>
+    <body>
+        <!-- Header -->
+        <header class="container-fluid sticky-top">
+            <div class="container d-flex justify-content-between">
+                <div class="text-white py-3 d-flex align-items-center gap-3">
+                    <img class="websiteLogo" src="./assets/images/oc_logo.png" alt="OC Logo">
+                    <section class="text-center">
+                        <h3 class="m-0">OSMEÑA COLLEGES</h3>
+                        <p class="m-0">Aspire...Achieve...Advance!</p>
+                    </section>
+                </div>
+                <div class="headerSearchDirectory mb-3">
+                    <div class="headerSearchDirectoryInner pt-3 px-3 flex-grow text-center">
+                        <p>Search the Directory</p>
+                    </div>
+                </div>
+                <div class="d-flex pb-3 flex-column justify-content-between">
+                    <div class="align-self-start d-flex justify-content-between gap-3">
+                        <div class="visitor">
+                            <div class="visitorInner px-5">Visitor</div>
+                        </div>
+                        <div class="alumna">
+                            <div class="alumnaInner px-5">Alumna</div>
+                        </div>
+                    </div>
+                    <form class="d-flex align-self-end">
+                        <input class="headerSearchBar form-control me-2" type="search" placeholder="Search by title, skill or company" aria-label="Search">
+                        <i class="headerSearchIcon fa-solid fa-magnifying-glass"></i>
+                    </form>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-xl navbar-light bg-transparent container-fluid py-4">
+            <div class="container">
+                <form class="d-flex d-lg-none">
+                    <input class="searchBar form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="searchButton btn btn-outline-success" type="submit">Search</button>
+                </form>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarBasic" aria-controls="navbarBasic" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarBasic">
+                    <ul class="navbar-nav mx-auto mb-2 mb-xl-0 ">
+                        <li class="nav-item">
+                            <a class="nav-link px-3" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="/my_network">My Network</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="/job_opportunities">Job Opportunities</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="/forums">Forums</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="#">News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="#">Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="/about">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="#">Schools</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="#">Contact</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="../AlumniManagementSystem/profile_page.php">
+                                <img class="userProfilePicture" src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="User Profile Picture">
+                                Me
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="container">
+            <div class="container-fluid px-0 d-flex gap-3">
+                <!-- Manage My Network Section -->
+                <div class="manageMyNetworkSection p-2">
+                    <div class="manageMyNetworkContent p-3 d-flex flex-column">
+                        <h6 class="text-white text-center mb-3">MANAGE MY NETWORK</h6>
+                        <section class="d-flex justify-content-between text-white align-items-center mb-2">
+                            <span class="d-flex align-items-center">
+                                <i class="fa-solid fa-people-arrows"></i>
+                                <a href="" class="manageMyNetworkLinks">
+                                    Connection
+                                </a>
+                            </span>
+                            <span class="connectionCounts text-white">157</span>
+                        </section>
+                        <section class="mb-2 text-white d-flex align-items-center">
+                            <i class="fa-solid fa-address-book"></i>
+                            <a href="" class="manageMyNetworkLinks">
+                                Contacts
+                            </a>
+                        </section>
+                        <section class="mb-2 text-white d-flex align-items-center">
+                            <i class="fa-solid fa-user"></i>
+                            <a href="" class="manageMyNetworkLinks">
+                                Following & Followers
+                            </a>
+                        </section>
+                        <section class="mb-2 text-white d-flex align-items-center">
+                            <i class="fa-solid fa-users"></i>
+                            <a href="" class="manageMyNetworkLinks">    
+                                Groups
+                            </a>
+                        </section>
+                        <section class="mb-2 text-white d-flex align-items-center">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <a href="" class="manageMyNetworkLinks"> 
+                                Events
+                            </a>
+                        </section>
+                        <section class="mb-2 text-white d-flex align-items-center">
+                            <i class="fa-solid fa-file-lines"></i>
+                            <a href="" class="manageMyNetworkLinks">
+                                Pages
+                            </a>
+                        </section>
+                        <section class="mb-2 text-white d-flex align-items-center">
+                            <i class="fa-solid fa-newspaper"></i>
+                            <a href="" class="manageMyNetworkLinks">
+                                Newsletters
+                            </a>
+                        </section>
+                        <section class="mb-2 text-white d-flex align-items-center">
+                            <i class="fa-solid fa-hashtag"></i>
+                            <a href="" class="manageMyNetworkLinks">
+                                Hastags
+                            </a>
+                        </section>
+                    </div>
+                </div>
+                <div class="peopleSection">
+                    <!-- Invitations Section -->
+                    <section class="d-flex justify-content-between">
+                        <h5>Invitations</h5>
+                        <a href="" class="seeAll">See all 167</a>
+                    </section>
+                    <div class="invitationSection d-flex gap-3 p-2 mb-2">
+                        <div class="invitationCard card">
+                            <div class="card-header">
+                                <img class="inviteeProfilePicture" src="https://cdn-icons-png.flaticon.com/512/6997/6997662.png" alt="Invitee Profile Picture">
+                            </div>
+                            <div class="card-body text-center pt-5">
+                                <h6 class="mb-0">Nicole Angel Cruz</h6>
+                                <p>Digital Marketing</p>
+                                <section class="small mb-3">
+                                    <i class="fa-solid fa-people-arrows"></i>
+                                    11 mutual connections
+                                </section>
+                                <section class="d-flex justify-content-between">
+                                    <button class="btn ignoreButton" type="button">Ignore</button>
+                                    <button class="btn acceptButton" type="button">Accept</button>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="invitationCard card">
+                            <div class="card-header">
+                                <img class="inviteeProfilePicture" src="https://cdn-icons-png.flaticon.com/512/6997/6997662.png" alt="Invitee Profile Picture">
+                            </div>
+                            <div class="card-body text-center pt-5">
+                                <h6 class="mb-0">Nicole Angel Cruz</h6>
+                                <p>Digital Marketing</p>
+                                <section class="small mb-3">
+                                    <i class="fa-solid fa-people-arrows"></i>
+                                    11 mutual connections
+                                </section>
+                                <section class="d-flex justify-content-between">
+                                    <button class="btn ignoreButton" type="button">Ignore</button>
+                                    <button class="btn acceptButton" type="button">Accept</button>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="invitationCard card">
+                            <div class="card-header">
+                                <img class="inviteeProfilePicture" src="https://cdn-icons-png.flaticon.com/512/6997/6997662.png" alt="Invitee Profile Picture">
+                            </div>
+                            <div class="card-body text-center pt-5">
+                                <h6 class="mb-0">Nicole Angel Cruz</h6>
+                                <p>Digital Marketing</p>
+                                <section class="small mb-3">
+                                    <i class="fa-solid fa-people-arrows"></i>
+                                    11 mutual connections
+                                </section>
+                                <section class="d-flex justify-content-between">
+                                    <button class="btn ignoreButton" type="button">Ignore</button>
+                                    <button class="btn acceptButton" type="button">Accept</button>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="invitationCard card">
+                            <div class="card-header">
+                                <img class="inviteeProfilePicture" src="https://cdn-icons-png.flaticon.com/512/6997/6997662.png" alt="Invitee Profile Picture">
+                            </div>
+                            <div class="card-body text-center pt-5">
+                                <h6 class="mb-0">Nicole Angel Cruz</h6>
+                                <p>Digital Marketing</p>
+                                <section class="small mb-3">
+                                    <i class="fa-solid fa-people-arrows"></i>
+                                    11 mutual connections
+                                </section>
+                                <section class="d-flex justify-content-between">
+                                    <button class="btn ignoreButton" type="button">Ignore</button>
+                                    <button class="btn acceptButton" type="button">Accept</button>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="invitationSection d-flex gap-3 p-2 mb-2">
+                        <div class="invitationCard card">
+                            <div class="card-header">
+                                <img class="inviteeProfilePicture" src="https://cdn-icons-png.flaticon.com/512/6997/6997662.png" alt="Invitee Profile Picture">
+                            </div>
+                            <div class="card-body text-center pt-5">
+                                <h6 class="mb-0">Nicole Angel Cruz</h6>
+                                <p>Digital Marketing</p>
+                                <section class="small mb-3">
+                                    <i class="fa-solid fa-people-arrows"></i>
+                                    11 mutual connections
+                                </section>
+                                <section class="d-flex justify-content-between">
+                                    <button class="btn ignoreButton" type="button">Ignore</button>
+                                    <button class="btn acceptButton" type="button">Accept</button>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="invitationCard card">
+                            <div class="card-header">
+                                <img class="inviteeProfilePicture" src="https://cdn-icons-png.flaticon.com/512/6997/6997662.png" alt="Invitee Profile Picture">
+                            </div>
+                            <div class="card-body text-center pt-5">
+                                <h6 class="mb-0">Nicole Angel Cruz</h6>
+                                <p>Digital Marketing</p>
+                                <section class="small mb-3">
+                                    <i class="fa-solid fa-people-arrows"></i>
+                                    11 mutual connections
+                                </section>
+                                <section class="d-flex justify-content-between">
+                                    <button class="btn ignoreButton" type="button">Ignore</button>
+                                    <button class="btn acceptButton" type="button">Accept</button>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="invitationCard card">
+                            <div class="card-header">
+                                <img class="inviteeProfilePicture" src="https://cdn-icons-png.flaticon.com/512/6997/6997662.png" alt="Invitee Profile Picture">
+                            </div>
+                            <div class="card-body text-center pt-5">
+                                <h6 class="mb-0">Nicole Angel Cruz</h6>
+                                <p>Digital Marketing</p>
+                                <section class="small mb-3">
+                                    <i class="fa-solid fa-people-arrows"></i>
+                                    11 mutual connections
+                                </section>
+                                <section class="d-flex justify-content-between">
+                                    <button class="btn ignoreButton" type="button">Ignore</button>
+                                    <button class="btn acceptButton" type="button">Accept</button>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="invitationCard card">
+                            <div class="card-header">
+                                <img class="inviteeProfilePicture" src="https://cdn-icons-png.flaticon.com/512/6997/6997662.png" alt="Invitee Profile Picture">
+                            </div>
+                            <div class="card-body text-center pt-5">
+                                <h6 class="mb-0">Nicole Angel Cruz</h6>
+                                <p>Digital Marketing</p>
+                                <section class="small mb-3">
+                                    <i class="fa-solid fa-people-arrows"></i>
+                                    11 mutual connections
+                                </section>
+                                <section class="d-flex justify-content-between">
+                                    <button class="btn ignoreButton" type="button">Ignore</button>
+                                    <button class="btn acceptButton" type="button">Accept</button>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="invitationSection d-flex gap-3 p-2 mb-3">
+                        <div class="invitationCard card">
+                            <div class="card-header">
+                                <img class="inviteeProfilePicture" src="https://cdn-icons-png.flaticon.com/512/6997/6997662.png" alt="Invitee Profile Picture">
+                            </div>
+                            <div class="card-body text-center pt-5">
+                                <h6 class="mb-0">Nicole Angel Cruz</h6>
+                                <p>Digital Marketing</p>
+                                <section class="small mb-3">
+                                    <i class="fa-solid fa-people-arrows"></i>
+                                    11 mutual connections
+                                </section>
+                                <section class="d-flex justify-content-between">
+                                    <button class="btn ignoreButton" type="button">Ignore</button>
+                                    <button class="btn acceptButton" type="button">Accept</button>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="invitationCard card">
+                            <div class="card-header">
+                                <img class="inviteeProfilePicture" src="https://cdn-icons-png.flaticon.com/512/6997/6997662.png" alt="Invitee Profile Picture">
+                            </div>
+                            <div class="card-body text-center pt-5">
+                                <h6 class="mb-0">Nicole Angel Cruz</h6>
+                                <p>Digital Marketing</p>
+                                <section class="small mb-3">
+                                    <i class="fa-solid fa-people-arrows"></i>
+                                    11 mutual connections
+                                </section>
+                                <section class="d-flex justify-content-between">
+                                    <button class="btn ignoreButton" type="button">Ignore</button>
+                                    <button class="btn acceptButton" type="button">Accept</button>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="invitationCard card">
+                            <div class="card-header">
+                                <img class="inviteeProfilePicture" src="https://cdn-icons-png.flaticon.com/512/6997/6997662.png" alt="Invitee Profile Picture">
+                            </div>
+                            <div class="card-body text-center pt-5">
+                                <h6 class="mb-0">Nicole Angel Cruz</h6>
+                                <p>Digital Marketing</p>
+                                <section class="small mb-3">
+                                    <i class="fa-solid fa-people-arrows"></i>
+                                    11 mutual connections
+                                </section>
+                                <section class="d-flex justify-content-between">
+                                    <button class="btn ignoreButton" type="button">Ignore</button>
+                                    <button class="btn acceptButton" type="button">Accept</button>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="invitationCard card">
+                            <div class="card-header">
+                                <img class="inviteeProfilePicture" src="https://cdn-icons-png.flaticon.com/512/6997/6997662.png" alt="Invitee Profile Picture">
+                            </div>
+                            <div class="card-body text-center pt-5">
+                                <h6 class="mb-0">Nicole Angel Cruz</h6>
+                                <p>Digital Marketing</p>
+                                <section class="small mb-3">
+                                    <i class="fa-solid fa-people-arrows"></i>
+                                    11 mutual connections
+                                </section>
+                                <section class="d-flex justify-content-between">
+                                    <button class="btn ignoreButton" type="button">Ignore</button>
+                                    <button class="btn acceptButton" type="button">Accept</button>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="showMoreSection p-3">
+                        <button class="btn showMoreButton d-block m-auto" type="button">Show More</button> 
+                    </div>
+
+                    <!-- People You May Know Section -->
+                    <section class="d-flex justify-content-between">
+                        <h5>People you may know from Osmeña Colleges</h5>
+                        <a href="" class="seeAll">See all</a>
+                    </section>
+                    <div class="peopleYouMayKnowSection d-flex gap-3 p-2 mb-2">
+                        <div class="peopleYouMayKnowCard card">
+                            <div class="card-header">
+                                <img class="inviteeProfilePicture" src="https://cdn-icons-png.flaticon.com/512/236/236831.png" alt="Invitee Profile Picture">
+                            </div>
+                            <div class="card-body text-center pt-5">
+                                <h6 class="mb-0">Juan Manuel Marques</h6>
+                                <p>Front-End Developer</p>
+                                <section class="small mb-3">
+                                    <i class="fa-solid fa-people-arrows"></i>
+                                    11 mutual connections
+                                </section>
+                                <button class="btn connectButton w-100 py-1" type="button">
+                                    <i class="fa-solid fa-user-plus"></i>
+                                    Connect
+                                </button>
+                            </div>
+                        </div>
+                        <div class="peopleYouMayKnowCard card">
+                            <div class="card-header">
+                                <img class="inviteeProfilePicture" src="https://cdn-icons-png.flaticon.com/512/236/236831.png" alt="Invitee Profile Picture">
+                            </div>
+                            <div class="card-body text-center pt-5">
+                                <h6 class="mb-0">Juan Manuel Marques</h6>
+                                <p>Front-End Developer</p>
+                                <section class="small mb-3">
+                                    <i class="fa-solid fa-people-arrows"></i>
+                                    11 mutual connections
+                                </section>
+                                <button class="btn connectButton w-100 py-1" type="button">
+                                    <i class="fa-solid fa-user-plus"></i>
+                                    Connect
+                                </button>
+                            </div>
+                        </div>
+                        <div class="peopleYouMayKnowCard card">
+                            <div class="card-header">
+                                <img class="inviteeProfilePicture" src="https://cdn-icons-png.flaticon.com/512/236/236831.png" alt="Invitee Profile Picture">
+                            </div>
+                            <div class="card-body text-center pt-5">
+                                <h6 class="mb-0">Juan Manuel Marques</h6>
+                                <p>Front-End Developer</p>
+                                <section class="small mb-3">
+                                    <i class="fa-solid fa-people-arrows"></i>
+                                    11 mutual connections
+                                </section>
+                                <button class="btn connectButton w-100 py-1" type="button">
+                                    <i class="fa-solid fa-user-plus"></i>
+                                    Connect
+                                </button>
+                            </div>
+                        </div>
+                        <div class="peopleYouMayKnowCard card">
+                            <div class="card-header">
+                                <img class="inviteeProfilePicture" src="https://cdn-icons-png.flaticon.com/512/236/236831.png" alt="Invitee Profile Picture">
+                            </div>
+                            <div class="card-body text-center pt-5">
+                                <h6 class="mb-0">Juan Manuel Marques</h6>
+                                <p>Front-End Developer</p>
+                                <section class="small mb-3">
+                                    <i class="fa-solid fa-people-arrows"></i>
+                                    11 mutual connections
+                                </section>
+                                <button class="btn connectButton w-100 py-1" type="button">
+                                    <i class="fa-solid fa-user-plus"></i>
+                                    Connect
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="peopleYouMayKnowSection d-flex gap-3 p-2 mb-2">
+                        <div class="peopleYouMayKnowCard card">
+                            <div class="card-header">
+                                <img class="inviteeProfilePicture" src="https://cdn-icons-png.flaticon.com/512/236/236831.png" alt="Invitee Profile Picture">
+                            </div>
+                            <div class="card-body text-center pt-5">
+                                <h6 class="mb-0">Juan Manuel Marques</h6>
+                                <p>Front-End Developer</p>
+                                <section class="small mb-3">
+                                    <i class="fa-solid fa-people-arrows"></i>
+                                    11 mutual connections
+                                </section>
+                                <button class="btn connectButton w-100 py-1" type="button">
+                                    <i class="fa-solid fa-user-plus"></i>
+                                    Connect
+                                </button>
+                            </div>
+                        </div>
+                        <div class="peopleYouMayKnowCard card">
+                            <div class="card-header">
+                                <img class="inviteeProfilePicture" src="https://cdn-icons-png.flaticon.com/512/236/236831.png" alt="Invitee Profile Picture">
+                            </div>
+                            <div class="card-body text-center pt-5">
+                                <h6 class="mb-0">Juan Manuel Marques</h6>
+                                <p>Front-End Developer</p>
+                                <section class="small mb-3">
+                                    <i class="fa-solid fa-people-arrows"></i>
+                                    11 mutual connections
+                                </section>
+                                <button class="btn connectButton w-100 py-1" type="button">
+                                    <i class="fa-solid fa-user-plus"></i>
+                                    Connect
+                                </button>
+                            </div>
+                        </div>
+                        <div class="peopleYouMayKnowCard card">
+                            <div class="card-header">
+                                <img class="inviteeProfilePicture" src="https://cdn-icons-png.flaticon.com/512/236/236831.png" alt="Invitee Profile Picture">
+                            </div>
+                            <div class="card-body text-center pt-5">
+                                <h6 class="mb-0">Juan Manuel Marques</h6>
+                                <p>Front-End Developer</p>
+                                <section class="small mb-3">
+                                    <i class="fa-solid fa-people-arrows"></i>
+                                    11 mutual connections
+                                </section>
+                                <button class="btn connectButton w-100 py-1" type="button">
+                                    <i class="fa-solid fa-user-plus"></i>
+                                    Connect
+                                </button>
+                            </div>
+                        </div>
+                        <div class="peopleYouMayKnowCard card">
+                            <div class="card-header">
+                                <img class="inviteeProfilePicture" src="https://cdn-icons-png.flaticon.com/512/236/236831.png" alt="Invitee Profile Picture">
+                            </div>
+                            <div class="card-body text-center pt-5">
+                                <h6 class="mb-0">Juan Manuel Marques</h6>
+                                <p>Front-End Developer</p>
+                                <section class="small mb-3">
+                                    <i class="fa-solid fa-people-arrows"></i>
+                                    11 mutual connections
+                                </section>
+                                <button class="btn connectButton w-100 py-1" type="button">
+                                    <i class="fa-solid fa-user-plus"></i>
+                                    Connect
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="peopleYouMayKnowSection d-flex gap-3 p-2 mb-2">
+                        <div class="peopleYouMayKnowCard card">
+                            <div class="card-header">
+                                <img class="inviteeProfilePicture" src="https://cdn-icons-png.flaticon.com/512/236/236831.png" alt="Invitee Profile Picture">
+                            </div>
+                            <div class="card-body text-center pt-5">
+                                <h6 class="mb-0">Juan Manuel Marques</h6>
+                                <p>Front-End Developer</p>
+                                <section class="small mb-3">
+                                    <i class="fa-solid fa-people-arrows"></i>
+                                    11 mutual connections
+                                </section>
+                                <button class="btn connectButton w-100 py-1" type="button">
+                                    <i class="fa-solid fa-user-plus"></i>
+                                    Connect
+                                </button>
+                            </div>
+                        </div>
+                        <div class="peopleYouMayKnowCard card">
+                            <div class="card-header">
+                                <img class="inviteeProfilePicture" src="https://cdn-icons-png.flaticon.com/512/236/236831.png" alt="Invitee Profile Picture">
+                            </div>
+                            <div class="card-body text-center pt-5">
+                                <h6 class="mb-0">Juan Manuel Marques</h6>
+                                <p>Front-End Developer</p>
+                                <section class="small mb-3">
+                                    <i class="fa-solid fa-people-arrows"></i>
+                                    11 mutual connections
+                                </section>
+                                <button class="btn connectButton w-100 py-1" type="button">
+                                    <i class="fa-solid fa-user-plus"></i>
+                                    Connect
+                                </button>
+                            </div>
+                        </div>
+                        <div class="peopleYouMayKnowCard card">
+                            <div class="card-header">
+                                <img class="inviteeProfilePicture" src="https://cdn-icons-png.flaticon.com/512/236/236831.png" alt="Invitee Profile Picture">
+                            </div>
+                            <div class="card-body text-center pt-5">
+                                <h6 class="mb-0">Juan Manuel Marques</h6>
+                                <p>Front-End Developer</p>
+                                <section class="small mb-3">
+                                    <i class="fa-solid fa-people-arrows"></i>
+                                    11 mutual connections
+                                </section>
+                                <button class="btn connectButton w-100 py-1" type="button">
+                                    <i class="fa-solid fa-user-plus"></i>
+                                    Connect
+                                </button>
+                            </div>
+                        </div>
+                        <div class="peopleYouMayKnowCard card">
+                            <div class="card-header">
+                                <img class="inviteeProfilePicture" src="https://cdn-icons-png.flaticon.com/512/236/236831.png" alt="Invitee Profile Picture">
+                            </div>
+                            <div class="card-body text-center pt-5">
+                                <h6 class="mb-0">Juan Manuel Marques</h6>
+                                <p>Front-End Developer</p>
+                                <section class="small mb-3">
+                                    <i class="fa-solid fa-people-arrows"></i>
+                                    11 mutual connections
+                                </section>
+                                <button class="btn connectButton w-100 py-1" type="button">
+                                    <i class="fa-solid fa-user-plus"></i>
+                                    Connect
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Semi Footer -->
+        <div class="semiFooter container-fluid">
+            <div class="container d-flex gap-3 justify-content-between pt-5 pb-3">
+                <div class="alumniNews">
+                    <h6 class="semiFooterTitle">ALUMNI NEWS</h6>
+                    <ul class="semiFooterLists">
+                        <li>
+                            <a href="">News from the alumni</a>
+                        </li>
+                        <li>
+                            <a href="">News from the school</a>
+                        </li>
+                        <li>
+                            <a href="">Submit News</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="getInvolved">
+                    <h6 class="semiFooterTitle">Get Involved</h6>
+                    <ul class="semiFooterLists">
+                        <li>
+                            <a href="">Online Subscription</a>
+                        </li>
+                        <li>
+                            <a href="">Become a member</a>
+                        </li>
+                        <li>
+                            <a href="">Become a sponsor</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="peopleAndNetwork">
+                    <h6 class="semiFooterTitle">People & Network</h6>
+                    <ul class="semiFooterLists">
+                        <li>
+                            <a href="">Alumni Directory</a>
+                        </li>
+                        <li>
+                            <a href="">Clubs and Groups</a>
+                        </li>
+                        <li>
+                            <a href="">Ambassadors</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="peopleAndAboutUs">
+                    <h6 class="semiFooterTitle">People & About Us</h6>
+                    <ul class="semiFooterLists">
+                        <li>
+                            <a href="">Mission</a>
+                        </li>
+                        <li>
+                            <a href="">History</a>
+                        </li>
+                        <li>
+                            <a href="">Annual report</a>
+                        </li>
+                        <li>
+                            <a href="">Board of Directors</a>
+                        </li>
+                        <li>
+                            <a href="">Office Team</a>
+                        </li>
+                        <li>
+                            <a href="">Impact on Business & Society</a>
+                        </li>
+                        <li>
+                            <a href="">Congress</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+    <footer>
+        <div class="footer container-fluid text-white py-5">
+            <div class="container d-flex flex-column justify-content-center align-items-center">
+                <div class="footerSocialMediaSection d-flex gap-4">
+                    <a class="footerSocMed" href="www.facebook.com"><i class="fa-brands fa-square-facebook"></i></a>
+                    <a class="footerSocMed" href="www.twitter.com"><i class="fa-brands fa-square-twitter"></i></a>
+                    <a class="footerSocMed" href="wwww.instagram.com"><i class="fa-brands fa-square-instagram"></i></a>
+                    <a class="footerSocMed" href="www.youtube.com"><i class="fa-brands fa-square-youtube"></i></a>
+                </div>
+                <p class="footerAllRightsReserved text-center mb-0">
+                    &copy; 2023 All rights reserved. The Osmeña Colleges is an equal opportunity educator and employer. Privacy Statement Report Web Disability-Related Issue
+                </p>
+            </div>
+        </div>
+    </footer>
+</html>
